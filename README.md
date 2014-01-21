@@ -1,43 +1,35 @@
-CakePHP
-=======
+tutorial-cakephp-blog
+=========================
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
+This is the tutorial for CakePHP - a simple site to view a few static pages, and CRUD blog.
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+This uses
 
-Some Handy Links
-----------------
+* Apache2
+* PHP5
+* SQLite3
+* CakePHP 2.4.4
 
-[CakePHP](http://www.cakephp.org) - The rapid development PHP framework
+Quick Start
+-----------
 
-[CookBook](http://book.cakephp.org) - THE CakePHP user documentation; start learning here!
+Ensure everyting is installed. You may need to run any of the following on an Ubuntu server
 
-[API](http://api.cakephp.org) - A reference to CakePHP's classes
+    sudo apt-get install apache2
+    sudo apt-get install php5
+    sudo apt-get install sqlite3
+    sudo apt-get install php5-sqlite
+    sudo a2enmod rewrite
 
-[Plugins](http://plugins.cakephp.org/) - A repository of extensions to the framework
+If everything is installed, the application can be run by
 
-[The Bakery](http://bakery.cakephp.org) - Tips, tutorials and articles
+1. Clone into a directory under your Apache2 web root
 
-[Community Center](http://community.cakephp.org) - A source for everything community related
+2. In `[project]/db` use `sqlite blog.sqlite`, and run the SQL commands in `[project]/db/dbfiles/001_CreateBlogs.sql`
 
-[Training](http://training.cakephp.org) - Join a live session and get skilled with the framework
+3. Run `chmod -R a+w` on `[project]/db` and `[project]/app/tmp` (You may need to sudo if Apache created the dbfile)
 
-[CakeFest](http://cakefest.org) - Don't miss our annual CakePHP conference
-
-[Cake Software Foundation](http://cakefoundation.org) - Promoting development related to CakePHP
-
-Get Support!
-------------
-
-[#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
-
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
-
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
-
-[Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
-
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
-
-![Cake Power](https://raw.github.com/cakephp/cakephp/master/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif)
+4. You should be good to go. The following URLs should be available
+  * `[base_url]/` - Posts index
+  * `[base_url]/posts` - Posts index
+  * `[base_url]/pages/home` - CakePHP debug page
